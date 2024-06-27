@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>charges_fact</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <pipeline_status>0</pipeline_status>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2023/08/22 16:42:57.863</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2023/08/22 16:42:57.863</modified_date>
+  </info>
+  <notepads>
+    <notepad>
+      <backgroundcolorblue>251</backgroundcolorblue>
+      <backgroundcolorgreen>232</backgroundcolorgreen>
+      <backgroundcolorred>201</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>90</fontcolorblue>
+      <fontcolorgreen>58</fontcolorgreen>
+      <fontcolorred>14</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>.AppleSystemUIFont</fontname>
+      <fontsize>13</fontsize>
+      <height>26</height>
+      <xloc>51</xloc>
+      <yloc>73</yloc>
+      <note>Dimensions for charges Fact</note>
+      <width>183</width>
+    </notepad>
+  </notepads>
+  <order>
+    <hop>
+      <from>dim_charges_description</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_collection_status</from>
+      <to>Stream lookup 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup</from>
+      <to>Stream lookup 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_procedure_code</from>
+      <to>Stream lookup 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 2</from>
+      <to>Stream lookup 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_insurance_name</from>
+      <to>Stream lookup 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 3</from>
+      <to>Stream lookup 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 4</from>
+      <to>Stream lookup 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_service_facility</from>
+      <to>Stream lookup 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Strings cut</from>
+      <to>Concat Fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields</from>
+      <to>Concat Fields 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields 2</from>
+      <to>Concat Fields 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dim_patient</from>
+      <to>Stream lookup 6</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 5</from>
+      <to>Stream lookup 6</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup 6</from>
+      <to>Strings cut</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ConvertDates</from>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>ConvertDates</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ConvertDates</from>
+      <to>Dummy (do nothing) 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat Fields 3</from>
+      <to>If Null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>If Null</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Concat Fields</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <ConcatFields>
+      <removeSelectedFields>Y</removeSelectedFields>
+      <targetFieldLength>0</targetFieldLength>
+      <targetFieldName>Submitted_Date_Formatted</targetFieldName>
+    </ConcatFields>
+    <fields>
+      <field>
+        <length>-1</length>
+        <name>Submitted_Year</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Submitted_Month</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Submitted_Day</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+    </fields>
+    <separator>-</separator>
+    <attributes/>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>592</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Concat Fields 2</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <ConcatFields>
+      <removeSelectedFields>Y</removeSelectedFields>
+      <targetFieldLength>0</targetFieldLength>
+      <targetFieldName>First_Submitted_Date_Formatted</targetFieldName>
+    </ConcatFields>
+    <enclosure>"</enclosure>
+    <fields>
+      <field>
+        <length>-1</length>
+        <name>First_Submitted_Year</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>First_Submitted_Month</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>First_Submitted_Day</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+    </fields>
+    <separator>-</separator>
+    <attributes/>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Concat Fields 3</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <ConcatFields>
+      <removeSelectedFields>Y</removeSelectedFields>
+      <targetFieldLength>0</targetFieldLength>
+      <targetFieldName>Service_Date_Formatted</targetFieldName>
+    </ConcatFields>
+    <enclosure>"</enclosure>
+    <fields>
+      <field>
+        <length>-1</length>
+        <name>Service_Date_Year</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Service_Date_Month</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Service_Date_Day</name>
+        <precision>-1</precision>
+        <type>String</type>
+      </field>
+    </fields>
+    <separator>-</separator>
+    <attributes/>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>624</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>ConvertDates</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>First_Submitted_Date_Formatted</name>
+        <rename>First_Submitted_Date_Formatted</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Service_Date_Formatted</name>
+        <rename>Service_Date_Formatted</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Discharge Date</name>
+        <rename>Discharge Date</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Admission Date</name>
+        <rename>Admission Date</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Submitted_Date_Formatted</name>
+        <rename>Submitted_Date_Formatted</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>allowed</name>
+        <rename>allowed</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Deposit Date</name>
+        <rename>Deposit Date</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>paid</name>
+        <rename>paid</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>true</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>Charge Amount</name>
+        <rename>Charge Amount</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>688</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>816</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NULL</function>
+        <leftvalue>Discharge Date</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_false_to>ConvertDates</send_false_to>
+    <send_true_to>Dummy (do nothing)</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>656</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>If Null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <mask>yyyy-MM-dd</mask>
+        <name>Discharge Date</name>
+        <set_empty_string>N</set_empty_string>
+        <value>1900-01-01</value>
+      </field>
+    </fields>
+    <replaceAllMask>yyyy-MM-dd</replaceAllMask>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+</valuetypes>
+    <attributes/>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>624</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_charges_description</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>description</name>
+        <field>charges_description</field>
+      </key>
+      <value>
+        <name>charges_description_key</name>
+        <rename>charges_description_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup 2</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_collection_status</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Collection Status</name>
+        <field>collection_status</field>
+      </key>
+      <value>
+        <name>collection_status_key</name>
+        <rename>collection_status_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup 3</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_procedure_code</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Procedure Code</name>
+        <field>procedure_code</field>
+      </key>
+      <value>
+        <name>procedure_code_key</name>
+        <rename>procedure_code_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup 4</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_insurance_name</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Insurance Provider Name</name>
+        <field>insurance_name</field>
+      </key>
+      <value>
+        <name>insurance_name_key</name>
+        <rename>insurance_name_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup 5</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_service_facility</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Service Facility Name</name>
+        <field>service_facility</field>
+      </key>
+      <value>
+        <name>service_facility_key</name>
+        <rename>service_facility_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup 6</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>dim_patient</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Patient Name</name>
+        <field>Patient Name</field>
+      </key>
+      <value>
+        <name>patient_key</name>
+        <rename>patient_key</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1344</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Strings cut</name>
+    <type>StringCut</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>4</cut_to>
+        <in_stream_name>Submitted Date</in_stream_name>
+        <out_stream_name>Submitted_Year</out_stream_name>
+      </field>
+      <field>
+        <cut_from>4</cut_from>
+        <cut_to>6</cut_to>
+        <in_stream_name>Submitted Date</in_stream_name>
+        <out_stream_name>Submitted_Month</out_stream_name>
+      </field>
+      <field>
+        <cut_from>6</cut_from>
+        <cut_to>8</cut_to>
+        <in_stream_name>Submitted Date</in_stream_name>
+        <out_stream_name>Submitted_Day</out_stream_name>
+      </field>
+      <field>
+        <cut_from>6</cut_from>
+        <cut_to>10</cut_to>
+        <in_stream_name>First Submitted Date</in_stream_name>
+        <out_stream_name>First_Submitted_Year</out_stream_name>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>2</cut_to>
+        <in_stream_name>First Submitted Date</in_stream_name>
+        <out_stream_name>First_Submitted_Month</out_stream_name>
+      </field>
+      <field>
+        <cut_from>3</cut_from>
+        <cut_to>5</cut_to>
+        <in_stream_name>First Submitted Date</in_stream_name>
+        <out_stream_name>First_Submitted_Day</out_stream_name>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>4</cut_to>
+        <in_stream_name>Service Date</in_stream_name>
+        <out_stream_name>Service_Date_Year</out_stream_name>
+      </field>
+      <field>
+        <cut_from>4</cut_from>
+        <cut_to>6</cut_to>
+        <in_stream_name>Service Date</in_stream_name>
+        <out_stream_name>Service_Date_Month</out_stream_name>
+      </field>
+      <field>
+        <cut_from>6</cut_from>
+        <cut_to>8</cut_to>
+        <in_stream_name>Service Date</in_stream_name>
+        <out_stream_name>Service_Date_Day</out_stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>1520</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+ 'Sunwave' as source_system
+,"Submitted Date"
+, mri
+, "Discharge Date"
+, allowed
+, "Consolidated ID"
+, description
+, "Patient Insurance ID"
+, "Deposit Date"
+, "Collection Status"
+, "Admission Date"
+, "Service Facility Name"
+, "Service Date"
+, "Patient Name"
+, paid
+, "Procedure Code"
+, id
+, "First Submitted Date"
+, "Revenue Code"
+, "Insurance Provider Name"
+, "Charge Amount"
+FROM "public".stage_sunwave_charges
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>1000</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <field>
+        <column_name>source_system</column_name>
+        <stream_name>source_system</stream_name>
+      </field>
+      <field>
+        <column_name>submitted_date</column_name>
+        <stream_name>Submitted_Date_Formatted</stream_name>
+      </field>
+      <field>
+        <column_name>mri</column_name>
+        <stream_name>mri</stream_name>
+      </field>
+      <field>
+        <column_name>discharge_date</column_name>
+        <stream_name>Discharge Date</stream_name>
+      </field>
+      <field>
+        <column_name>allowed</column_name>
+        <stream_name>allowed</stream_name>
+      </field>
+      <field>
+        <column_name>consolidated_id</column_name>
+        <stream_name>Consolidated ID</stream_name>
+      </field>
+      <field>
+        <column_name>patient_insurance_id</column_name>
+        <stream_name>Patient Insurance ID</stream_name>
+      </field>
+      <field>
+        <column_name>deposit_date</column_name>
+        <stream_name>Deposit Date</stream_name>
+      </field>
+      <field>
+        <column_name>admission_date</column_name>
+        <stream_name>Admission Date</stream_name>
+      </field>
+      <field>
+        <column_name>service_date</column_name>
+        <stream_name>Service_Date_Formatted</stream_name>
+      </field>
+      <field>
+        <column_name>paid</column_name>
+        <stream_name>paid</stream_name>
+      </field>
+      <field>
+        <column_name>id</column_name>
+        <stream_name>id</stream_name>
+      </field>
+      <field>
+        <column_name>first_submitted_date</column_name>
+        <stream_name>First_Submitted_Date_Formatted</stream_name>
+      </field>
+      <field>
+        <column_name>revenue_code</column_name>
+        <stream_name>Revenue Code</stream_name>
+      </field>
+      <field>
+        <column_name>charge_amount</column_name>
+        <stream_name>Charge Amount</stream_name>
+      </field>
+      <field>
+        <column_name>charges_description_key</column_name>
+        <stream_name>charges_description_key</stream_name>
+      </field>
+      <field>
+        <column_name>collection_status_key</column_name>
+        <stream_name>collection_status_key</stream_name>
+      </field>
+      <field>
+        <column_name>procedure_code_key</column_name>
+        <stream_name>procedure_code_key</stream_name>
+      </field>
+      <field>
+        <column_name>insurance_name_key</column_name>
+        <stream_name>insurance_name_key</stream_name>
+      </field>
+      <field>
+        <column_name>service_facility_key</column_name>
+        <stream_name>service_facility_key</stream_name>
+      </field>
+      <field>
+        <column_name>patient_key</column_name>
+        <stream_name>patient_key</stream_name>
+      </field>
+    </fields>
+    <ignore_errors>N</ignore_errors>
+    <only_when_have_rows>N</only_when_have_rows>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <return_keys>N</return_keys>
+    <schema>public</schema>
+    <specify_fields>Y</specify_fields>
+    <table>fct_charges</table>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_in_table>Y</tablename_in_table>
+    <truncate>N</truncate>
+    <use_batch>Y</use_batch>
+    <attributes/>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>688</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_charges_description</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  charges_description_key
+, charges_description
+, source_system
+FROM "public".dim_charges_description
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_collection_status</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  collection_status_key
+, collection_status
+, source_system
+FROM "public".dim_collection_status
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_insurance_name</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  insurance_name_key
+, insurance_name
+, source_system
+FROM "public".dim_insurance_name
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_patient</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT distinct
+  patient_key
+, "Patient Name"
+FROM "public".dim_patient
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>1344</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_procedure_code</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  procedure_code_key
+, procedure_code
+, source_system
+FROM "public".dim_procedure_code
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_service_facility</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  service_facility_key
+, service_facility
+, source_system
+FROM "public".dim_service_facility
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+    <error>
+      <source_transform>ConvertDates</source_transform>
+      <target_transform>Dummy (do nothing) 2</target_transform>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename>error</descriptions_valuename>
+      <fields_valuename>field</fields_valuename>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>

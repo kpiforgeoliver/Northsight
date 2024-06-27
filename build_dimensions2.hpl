@@ -1,0 +1,2170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>build_dimensions2</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <pipeline_status>0</pipeline_status>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2023/08/22 16:42:57.863</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2023/08/22 16:42:57.863</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+    <hop>
+      <from>Filter nulls 11</from>
+      <to>dim_communication_type</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  11</from>
+      <to>Sort Communication</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Communication</from>
+      <to>Unique Communication</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Communication</from>
+      <to>Filter nulls 11</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  11</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 12</from>
+      <to>dim_level_of_care 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 12</from>
+      <to>Sort Level of Care 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Level of Care 2</from>
+      <to>Unique Level Of Care 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Level Of Care 2</from>
+      <to>Filter nulls 12</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 12</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 13</from>
+      <to>dim_discharge_type</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 13</from>
+      <to>Sort discharge type</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort discharge type</from>
+      <to>Unique Discharge Type</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Discharge Type</from>
+      <to>Filter nulls 13</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 13</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 14</from>
+      <to>dim_employment_status</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 14</from>
+      <to>Sort employment status</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort employment status</from>
+      <to>Unique employment status</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique employment status</from>
+      <to>Filter nulls 14</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 14</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 15</from>
+      <to>dim_financial_class</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 15</from>
+      <to>Sort Financial Class</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Financial Class</from>
+      <to>Unique financial Class</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique financial Class</from>
+      <to>Filter nulls 15</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 15</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 16</from>
+      <to>dim_insurance_name</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 16</from>
+      <to>Sort Insurance Name</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Insurance Name</from>
+      <to>Unique Insurance Name</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Insurance Name</from>
+      <to>Filter nulls 16</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 16</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 17</from>
+      <to>dim_language</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 17</from>
+      <to>Sort Language</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Language</from>
+      <to>Unique Language</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Language</from>
+      <to>Filter nulls 17</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 17</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 18</from>
+      <to>dim_marital_status</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 18</from>
+      <to>Sort Marital</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Marital</from>
+      <to>Unique Marital</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Marital</from>
+      <to>Filter nulls 18</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 18</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 19</from>
+      <to>Sort Patient</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Patient</from>
+      <to>Unique Patient</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Patient</from>
+      <to>Filter nulls 19</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 19</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 19</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>dim_patient</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 20</from>
+      <to>Sort Counselor</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Counselor</from>
+      <to>Unique Counselor</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Counselor</from>
+      <to>Filter nulls 20</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values 20</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 20</from>
+      <to>dim_counselor</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Filter nulls 11</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Communication Type</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_communication_type</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 12</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Current Level Of Care</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_level_of_care 2</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 13</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Discharge Type</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_discharge_type</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 14</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Employment Status </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_employment_status</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 15</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Financial Class Name</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_financial_class</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>496</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 16</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Insurance Name</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_insurance_name</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 17</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Language </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_language</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>720</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 18</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Marital Status</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_marital_status</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>848</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 19</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Patient Id</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>Select values</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 20</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Primary Counselor</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_counselor</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>1072</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>Patient Date Of Birth</name>
+        <rename>Patient Date Of Birth</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-DD</conversion_mask>
+        <date_format_lenient>true</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  11</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Communication Type</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 12</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Current Level Of Care</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 13</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Discharge Type</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 14</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Employment Status </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 15</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Financial Class Name</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>496</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 16</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Insurance Name</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 17</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Language </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>720</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 18</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Marital Status</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>848</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 19</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Patient Id</name>
+      </field>
+      <field>
+        <name>Patient Date Of Birth</name>
+      </field>
+      <field>
+        <name>Patient Last Name</name>
+      </field>
+      <field>
+        <name>Patient First Name</name>
+      </field>
+      <field>
+        <name>Patient Address1</name>
+      </field>
+      <field>
+        <name>Patient City</name>
+      </field>
+      <field>
+        <name>Patient Email</name>
+      </field>
+      <field>
+        <name>Patient Gender Code</name>
+      </field>
+      <field>
+        <name>Patient Middle Name</name>
+      </field>
+      <field>
+        <name>Patient Name</name>
+      </field>
+      <field>
+        <name>Patient Phone Home</name>
+      </field>
+      <field>
+        <name>Patient Phone Mobile</name>
+      </field>
+      <field>
+        <name>Patient State</name>
+      </field>
+      <field>
+        <name>Patient Zip</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 20</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Primary Counselor</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>1072</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Communication</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Communication Type</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Counselor</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>1072</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Financial Class</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Financial Class Name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>496</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Insurance Name</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Insurance Name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Language</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Language </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>720</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Level of Care 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Current Level Of Care</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Marital</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Marital Status</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>848</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Patient</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Patient Id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Patient Date Of Birth</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Patient Last Name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Patient First Name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort discharge type</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Discharge Type</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort employment status</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Employment Status </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  'Sunwave' as Source_System
+, prime
+, mri
+, opportunityid
+, diagnosis
+, age
+, race
+, culture
+, nurse
+, pmhnp
+, program
+, realm
+, transferred
+, "Account Id"
+, "Account Legacy Id"
+, "Admission Date"
+, "Admission Id"
+, "Admission Level Of Care"
+, "Admission Service Facility"
+, "Admission Time"
+, "Admissions Rep"
+, "Allergy Risk"
+, "Assigned Therapist Email"
+, "Assigned Therapist"
+, "Authorization Code"
+, "Caller Phone Home"
+, "Caller Phone Mobile"
+, "Campaign Id"
+, "Case Manager"
+, "Communication Type"
+, "Current Level Of Care"
+, "Current Service Facility Name"
+, "Dietary Risk"
+, "Discharge Date"
+, "Discharge Hour"
+, "Discharge Type"
+, "Employment Status "
+, "End On"
+, "Financial Class Name"
+, "First Contact"
+, "High Risk"
+, "Insurance Group Number"
+, "Insurance Name"
+, "Language "
+, "Last Level Of Care"
+, "Last Service Facility"
+, "Length Of Stay"
+, "Level Of Care Id"
+, "Levels Of Care List"
+, "Marital Status"
+, "Member Id"
+, "Nickname "
+, "Opportunity Legacy Id"
+, "Patient Address1"
+, "Patient City"
+, "Patient Date Of Birth"
+, "Patient Email"
+, "Patient First Name"
+, "Patient Gender Code"
+, "Patient Id"
+, "Patient Last Name"
+, "Patient Middle Name"
+, "Patient Name"
+, "Patient Phone Home"
+, "Patient Phone Mobile"
+, "Patient State"
+, "Patient Zip"
+, "Payment Method"
+, "Planned Discharge"
+, "Policy Type"
+, "Primary Counselor"
+, "Primary Drug Of Use "
+, "Primary Insurance Phone  "
+, "Primary Subscriber Phone "
+, "Referal Source"
+, "Referral Destination"
+, "Referral Source Account Owner"
+, "Referral Source Contact"
+, "Referral Source Id"
+, "Religion "
+, "Secondary Drug Of Use "
+, "Secondary Insurance Group Number"
+, "Secondary Insurance Name"
+, "Secondary Member Id"
+, "Secondary Relationship To Subscriber "
+, "Secondary Submit Name"
+, "Secondary Subscriber Date Of Birth "
+, "Secondary Subscriber First Name "
+, "Secondary Subscriber Insurance Phone Number "
+, "Secondary Subscriber Last Name "
+, "Secondary Subscriber Phone Number "
+, "Secondary Subscriber Ssn "
+, "Service Facility Id"
+, "Start On"
+, "Submit Name"
+, "Target Service Facility"
+, "Temporal Detox"
+, "Tertiary Drug Of Use "
+FROM "public".stage_sunwave_census
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Communication</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Communication Type</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Counselor</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Primary Counselor</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>1072</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Discharge Type</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Discharge Type</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Insurance Name</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Insurance Name</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Language</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Language </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>720</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Level Of Care 2</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Current Level Of Care</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Marital</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Marital Status</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>848</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Patient</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Patient Id</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Patient Date Of Birth</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Patient Last Name</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Patient First Name</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique employment status</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Employment Status </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique financial Class</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Financial Class Name</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>496</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_communication_type</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>communication_type</lookup>
+        <name>Communication Type</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>communication_type_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_communication_type</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_counselor</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>primary_counselor</lookup>
+        <name>Primary Counselor</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>counselor_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_counselor</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>1072</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_discharge_type</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>discharge_type</lookup>
+        <name>Discharge Type</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>discharge_type_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_discharge_type</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_employment_status</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>employment_status</lookup>
+        <name>Employment Status </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>employment_status_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_employment_status</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_financial_class</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>financial_class</lookup>
+        <name>Financial Class Name</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>financial_class_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_financial_class</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>496</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_insurance_name</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>insurance_name</lookup>
+        <name>Insurance Name</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>insurance_name_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_insurance_name</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>608</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_language</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>language</lookup>
+        <name>Language </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>language_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_language</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>720</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_level_of_care 2</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>level_of_care</lookup>
+        <name>Current Level Of Care</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>loc_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_level_of_care</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_marital_status</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>marital_status</lookup>
+        <name>Marital Status</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>marital_status_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_marital_status</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>848</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_patient</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <name/>
+        <to>date_to</to>
+      </date>
+      <field>
+        <lookup>Patient Address1</lookup>
+        <name>Patient Address1</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient City</lookup>
+        <name>Patient City</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient State</lookup>
+        <name>Patient State</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Zip</lookup>
+        <name>Patient Zip</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Email</lookup>
+        <name>Patient Email</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Name</lookup>
+        <name>Patient Name</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Gender Code</lookup>
+        <name>Patient Gender Code</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Phone Home</lookup>
+        <name>Patient Phone Home</name>
+        <update>Insert</update>
+      </field>
+      <field>
+        <lookup>Patient Phone Mobile</lookup>
+        <name>Patient Phone Mobile</name>
+        <update>Insert</update>
+      </field>
+      <key>
+        <lookup>patient_id</lookup>
+        <name>Patient Id</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <key>
+        <lookup>patient_dob</lookup>
+        <name>Patient Date Of Birth</name>
+      </key>
+      <key>
+        <lookup>patient_last_name</lookup>
+        <name>Patient Last Name</name>
+      </key>
+      <key>
+        <lookup>patient_first_name</lookup>
+        <name>Patient First Name</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>patient_key</name>
+        <rename/>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <sequence/>
+    <start_date_field_name/>
+    <table>dim_patient</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1104</xloc>
+      <yloc>960</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>

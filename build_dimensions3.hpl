@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>build_dimensions3</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <pipeline_status>0</pipeline_status>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2023/08/22 16:42:57.863</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2023/08/22 16:42:57.863</modified_date>
+  </info>
+  <notepads>
+    <notepad>
+      <backgroundcolorblue>251</backgroundcolorblue>
+      <backgroundcolorgreen>232</backgroundcolorgreen>
+      <backgroundcolorred>201</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>90</fontcolorblue>
+      <fontcolorgreen>58</fontcolorgreen>
+      <fontcolorred>14</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>.AppleSystemUIFont</fontname>
+      <fontsize>13</fontsize>
+      <height>26</height>
+      <xloc>51</xloc>
+      <yloc>73</yloc>
+      <note>Dimensions for Admission Fact</note>
+      <width>197</width>
+    </notepad>
+  </notepads>
+  <order>
+    <hop>
+      <from>Filter nulls 21</from>
+      <to>dim_drug</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  21</from>
+      <to>Sort Drug Of Use</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Drug Of Use</from>
+      <to>Unique Drug Of Use</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Drug Of Use</from>
+      <to>Filter nulls 21</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  21</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 22</from>
+      <to>dim_referral_source</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  22</from>
+      <to>Sort referral Source</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort referral Source</from>
+      <to>Unique Referral Source</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Referral Source</from>
+      <to>Filter nulls 22</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  22</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 23</from>
+      <to>dim_drug 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  23</from>
+      <to>Sort Drug Of Use 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Drug Of Use 2</from>
+      <to>Unique Drug Of Use 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Drug Of Use 2</from>
+      <to>Filter nulls 23</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  23</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 24</from>
+      <to>dim_religion</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  24</from>
+      <to>Sort Religion</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Religion</from>
+      <to>Unique Religion</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Religion</from>
+      <to>Filter nulls 24</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  24</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter nulls 25</from>
+      <to>dim_drug 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  25</from>
+      <to>Sort Drug Of Use 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Drug Of Use 3</from>
+      <to>Unique Drug Of Use 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique Drug Of Use 3</from>
+      <to>Filter nulls 25</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  25</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values  25 2</from>
+      <to>Sort Admission ID and Diag Codes</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Select values  25 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Admission ID and Diag Codes</from>
+      <to>Split field to rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split field to rows</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>dim_diagnosis</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Filter nulls 21</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Primary Drug Of Use </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_drug</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 22</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Referal Source</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_referral_source</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 23</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Secondary Drug Of Use </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_drug 2</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 24</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Religion </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_religion</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter nulls 25</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>Tertiary Drug Of Use </leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_drug 3</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  21</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Primary Drug Of Use </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  22</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Referral Source Id</name>
+      </field>
+      <field>
+        <name>Referal Source</name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  23</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Secondary Drug Of Use </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  24</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Religion </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  25</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Tertiary Drug Of Use </name>
+      </field>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values  25 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Source_System</name>
+      </field>
+      <field>
+        <name>Admission Id</name>
+      </field>
+      <field>
+        <name>diagnosis</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>640</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Admission ID and Diag Codes</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>source_system</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Admission Id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>640</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Drug Of Use</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Primary Drug Of Use </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Drug Of Use 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Secondary Drug Of Use </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Drug Of Use 3</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Tertiary Drug Of Use </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort Religion</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Religion </name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort referral Source</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>${java.io.tmpdir}</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Referral Source Id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Referal Source</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Split field to rows</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <delimiter>,</delimiter>
+    <delimiter_is_regex>N</delimiter_is_regex>
+    <newfield>Diagnosis_Code</newfield>
+    <resetrownumber>Y</resetrownumber>
+    <rownum>N</rownum>
+    <splitfield>diagnosis</splitfield>
+    <attributes/>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>640</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NorthsightBI</connection>
+    <execute_each_row>N</execute_each_row>
+    <limit>0</limit>
+    <sql>SELECT
+  'Sunwave' as Source_System
+, prime
+, mri
+, opportunityid
+, diagnosis
+, age
+, race
+, culture
+, nurse
+, pmhnp
+, program
+, realm
+, transferred
+, "Account Id"
+, "Account Legacy Id"
+, "Admission Date"
+, "Admission Id"
+, "Admission Level Of Care"
+, "Admission Service Facility"
+, "Admission Time"
+, "Admissions Rep"
+, "Allergy Risk"
+, "Assigned Therapist Email"
+, "Assigned Therapist"
+, "Authorization Code"
+, "Caller Phone Home"
+, "Caller Phone Mobile"
+, "Campaign Id"
+, "Case Manager"
+, "Communication Type"
+, "Current Level Of Care"
+, "Current Service Facility Name"
+, "Dietary Risk"
+, "Discharge Date"
+, "Discharge Hour"
+, "Discharge Type"
+, "Employment Status "
+, "End On"
+, "Financial Class Name"
+, "First Contact"
+, "High Risk"
+, "Insurance Group Number"
+, "Insurance Name"
+, "Language "
+, "Last Level Of Care"
+, "Last Service Facility"
+, "Length Of Stay"
+, "Level Of Care Id"
+, "Levels Of Care List"
+, "Marital Status"
+, "Member Id"
+, "Nickname "
+, "Opportunity Legacy Id"
+, "Patient Address1"
+, "Patient City"
+, "Patient Date Of Birth"
+, "Patient Email"
+, "Patient First Name"
+, "Patient Gender Code"
+, "Patient Id"
+, "Patient Last Name"
+, "Patient Middle Name"
+, "Patient Name"
+, "Patient Phone Home"
+, "Patient Phone Mobile"
+, "Patient State"
+, "Patient Zip"
+, "Payment Method"
+, "Planned Discharge"
+, "Policy Type"
+, "Primary Counselor"
+, "Primary Drug Of Use "
+, "Primary Insurance Phone  "
+, "Primary Subscriber Phone "
+, "Referal Source"
+, "Referral Destination"
+, "Referral Source Account Owner"
+, "Referral Source Contact"
+, "Referral Source Id"
+, "Religion "
+, "Secondary Drug Of Use "
+, "Secondary Insurance Group Number"
+, "Secondary Insurance Name"
+, "Secondary Member Id"
+, "Secondary Relationship To Subscriber "
+, "Secondary Submit Name"
+, "Secondary Subscriber Date Of Birth "
+, "Secondary Subscriber First Name "
+, "Secondary Subscriber Insurance Phone Number "
+, "Secondary Subscriber Last Name "
+, "Secondary Subscriber Phone Number "
+, "Secondary Subscriber Ssn "
+, "Service Facility Id"
+, "Start On"
+, "Submit Name"
+, "Target Service Facility"
+, "Temporal Detox"
+, "Tertiary Drug Of Use "
+FROM "public".stage_sunwave_census
+</sql>
+    <variables_active>N</variables_active>
+    <attributes/>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Drug Of Use</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Primary Drug Of Use </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Drug Of Use 2</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Secondary Drug Of Use </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Drug Of Use 3</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Tertiary Drug Of Use </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Referral Source</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Referral Source Id</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Referal Source</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique Religion</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>Religion </name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_drug</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>drug_name</lookup>
+        <name>Primary Drug Of Use </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>drug_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_drug</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_drug 2</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>drug_name</lookup>
+        <name>Secondary Drug Of Use </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>drug_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_drug</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_drug 3</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>drug_name</lookup>
+        <name>Tertiary Drug Of Use </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>drug_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_drug</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_referral_source</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>referral_source_id</lookup>
+        <name>Referral Source Id</name>
+      </key>
+      <key>
+        <lookup>referral_source</lookup>
+        <name>Referal Source</name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>referral_source_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_referral_source</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>192</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_religion</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>religion</lookup>
+        <name>Religion </name>
+      </key>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>religion_key</name>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <table>dim_religion</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>diagnosis</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_true_to>dim_diagnosis</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>640</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dim_diagnosis</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache_size>-1</cache_size>
+    <commit>100</commit>
+    <connection>NorthsightBI</connection>
+    <fields>
+      <date>
+        <from>date_from</from>
+        <name/>
+        <to>date_to</to>
+      </date>
+      <key>
+        <lookup>source_system</lookup>
+        <name>source_system</name>
+      </key>
+      <key>
+        <lookup>admission_id</lookup>
+        <name>Admission Id</name>
+      </key>
+      <key>
+        <lookup>diagnosis_code</lookup>
+        <name>Diagnosis_Code</name>
+      </key>
+      <return>
+        <creation_method>tablemax</creation_method>
+        <name>diagnosis_key</name>
+        <rename/>
+        <version>version</version>
+      </return>
+    </fields>
+    <max_year>2199</max_year>
+    <min_year>1900</min_year>
+    <preload_cache>N</preload_cache>
+    <schema>"public"</schema>
+    <sequence/>
+    <start_date_field_name/>
+    <table>dim_diagnosis</table>
+    <update>Y</update>
+    <useBatch>N</useBatch>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>640</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>
